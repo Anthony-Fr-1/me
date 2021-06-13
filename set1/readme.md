@@ -1,5 +1,3 @@
-TODO: Reflect on what you learned this week and what is still unclear.
-
 I think the interface of vs code and setup is quite overwhelming. I do appreciate that whenever starting something new, its always best to start with good habits. I feel this system will put me in good stead for the future so long as i can remember it all haha
 
 I think learning anything that is new is hard. I've only ever done very basic copy paste coding in the past. And by the past, I mean i've only touched code since about september last year where I had to program a kuka robot arm. The code i did recently was programming an arduino, however i only muddled my way through it.
