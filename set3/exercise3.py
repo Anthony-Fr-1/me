@@ -29,6 +29,7 @@ def advancedGuessingGame():
     return "You got it!"
     # the tests are looking for the exact string "You got it!". Don't modify that!
 
+
 import random
 
 
@@ -39,17 +40,45 @@ def exampleGuessingGame():
     """
     print("\nWelcome to the guessing game!")
     print("A number between 0 and _ ?")
-    upperBound = input("Enter an upper bound: ")
+    correctanswer = False
+    while correctanswer == False:
+        try:
+            upperBound = int(input("enter upper bound\n"))
+            correctanswer = True
+        except:
+            print("input must be integer\n")
     print("OK then, a number between 0 and {} ?".format(upperBound))
+    print("A number between _ and {} ?".format(upperBound))
+    correctanswer = False
+    while correctanswer == False:
+        try:
+            lowerBound = int(input("enter lower bound\n"))
+            correctanswer = True
+        except:
+            print("input must be integer")
+    print("OK then, a number between {} and {} ?".format(lowerBound, upperBound))
     C = int(upperBound)
+
+    if lowerBound > upperBound:
+        temp = lowerBound
+        lowerBound = upperBound
+        upperBound = temp
 
     actualNumber = random.randint(0, upperBound)
 
     guessed = False
 
     while not guessed:
-        guessedNumber = int(input("Guess a number: "))
-        print("You guessed {},".format(guessedNumber),)
+        correctanswer = False
+        while correctanswer == False:
+            try:
+                guessedNumber = int(input("enter guess\n"))
+                correctanswer = True
+            except:
+                print("input must be integer\n")
+        print(
+            "You guessed {},".format(guessedNumber),
+        )
         if guessedNumber == actualNumber:
             print("You got it!! It was {}".format(actualNumber))
             guessed = True
@@ -59,17 +88,18 @@ def exampleGuessingGame():
             print("Too big, try again :'(")
     return "You got it!"
 
+
 # checking to see if number is within the range
-  try:
-    if upperbound in random.randint(0, upperBound):
-  except:
-    print("The number is outside range.")
+# try:
+# if upperBound in random.randint(0, upperBound):
+# except:
+# print("The number is outside range.")
 # checking if guessed number is an integer
-  try:
-    guessedNumber == int:
-  except:
-      print("try again: number must be an integer")
- 
+# try:
+# guessedNumber == int:
+# except:
+# print("try again: number must be an integer")
+
 
 if __name__ == "__main__":
     exampleGuessingGame()
