@@ -7,8 +7,9 @@ def is_odd(a_number):
 
     Look into modulo division using the '%' operator as one way of doing this.
     """
-    
- return (a_number % 2) != 0
+    answer = (a_number % 2) != 0
+    return answer
+
 
 def fix_it(moves=True, should_move=True):
     """Decide what to do.
@@ -22,25 +23,27 @@ def fix_it(moves=True, should_move=True):
     "Duct Tape"
     "No Problem"
 
-    Most people write this function with 4 return statements. 
+    Most people write this function with 4 return statements.
     As an extra challenge, see if you can get that down to three.
     """
-   
-   If moves and should_move
+
+    if moves and should_move:
         return "No Problem"
-    Elif moves and not should_move
+    elif moves and not should_move:
         return "Duct Tape"
-    Elif not moves and not should_move
+    elif not moves and not should_move:
         return "No Problem"
-    Else not moves and should_move
+    elif not moves and should_move:
         return "WD-40"
- 
- If moves == should_move
-        return "No Problem"
-    Elif moves and not should_move
-        return "Duct Tape"
-    Else not moves and should_move
-        return "WD-40"
+
+
+#  If moves == should_move
+#         return "No Problem"
+#     Elif moves and not should_move
+#         return "Duct Tape"
+#     Else not moves and should_move
+#         return "WD-40"
+
 
 def loops_1a():
     """Make 10 stars.
@@ -49,14 +52,14 @@ def loops_1a():
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
-    Star_list = []
-    For i in range (10):
-            Star_list.append("*") 
-    return Star_list
-   
-    alternatively
+    star_list = []
+    for i in range(10):
+        star_list.append("*")
+    return star_list
 
-    ["*"] * 10
+    # alternatively
+
+    # ["*"] * 10
 
 
 def loops_1c(number_of_items=5, symbol="#"):
@@ -66,13 +69,13 @@ def loops_1c(number_of_items=5, symbol="#"):
     string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    asterix_list = [] 
-    For i in range (number_of_items):
-    asterix_list.append("*") 
+    asterix_list = []
+    for i in range(number_of_items):
+        asterix_list.append(symbol)
     return asterix_list
 
-    
-["#"] * (number_of_items)
+    # ["#"] * (number_of_items)
+
 
 def loops_2():
     """Make a big square starfield.
@@ -92,14 +95,14 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    Star_square = []
-    For j in range (10)
- Star_list = []
-    For i in range (10):
-            Star_list.append("*") 
-    Star_square.append(Star_list)
+    star_square = []
+    for j in range(10):
+        star_list = []
+        for i in range(10):
+            star_list.append("*")
+        star_square.append(star_list)
+    return star_square
 
-    return Star_square
 
 def loops_3():
     """Make a rising block of numbers.
@@ -122,14 +125,15 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-  number_square = []
-    for i in range (10)
+    number_square = []
+    for i in range(10):
         number_row = []
-        for j in range (10)
+        for j in range(10):
             number_row.append(str(i))
         number_square.append(number_row)
 
     return number_square
+
 
 def loops_4():
     """Make a block of numbers that rises left to right.
@@ -148,14 +152,15 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-   number_square = []
-    for i in range (10)
+    number_square = []
+    for i in range(10):
         number_row = []
-        for j in range (10)
+        for j in range(10):
             number_row.append(str(j))
         number_square.append(number_row)
 
     return number_square
+
 
 def loops_5():
     """Make the coordinates of the block.
@@ -181,11 +186,11 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-      number_square = []
-    for i in range (10)
+    number_square = []
+    for i in range(10):
         number_row = []
-        for j in range (5)
-            number_row.append('(i{}, j{})'.format(i, j))
+        for j in range(5):
+            number_row.append("(i{}, j{})".format(i, j))
         number_square.append(number_row)
 
     return number_square
@@ -214,11 +219,11 @@ def loops_6():
     the_wedge = []
     for i in range(10):
         row = []
-        for j in range(i + 1): 
-            row.append(j)
+        for j in range(i + 1):
+            row.append(str(j))
         the_wedge.append(row)
     return the_wedge
-        
+
 
 def loops_7():
     """Make a pyramid.
@@ -241,7 +246,18 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+
+    side = 5
+    c = "*"
+    for i in range(side):
+        print((c * i).rjust(side - 1) + c + (c * i).ljust(side - 1))
+
+    return c
+
+    # triangle = range[1,9,2]
+    # i = "*"
+    # for i in triangle:
+    # print("*")
 
 
 def little_printer(some_kind_of_list, exercise_name):
