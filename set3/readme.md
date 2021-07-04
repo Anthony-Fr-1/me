@@ -1,6 +1,29 @@
-TODO: Reflect on what you learned this week and what is still unclear.
+![alt text](https://github.com/Anthony-Fr-1/me/blob/58fd513adb3462e989215d7e91af20b14a70bcbc/Week%203%201161%20Diagram.png)
 
-pyramid - create pascals triangle - if 1 replace with \* else " " (space)
+REFLECTION ON - Tom Griffiths and Brian Christian on “Algorithms to Live By” Rationally Speaking.
+
+As I was working (struggling) to understand python, I realised I had to step back and work out what I needed to do to get my head around it. So over the weekend I tried to watch as much "beginner" content as I could, just to see it being typed out and hear the same things over and over again so I could start to recognise the patterns. I think after doing this I got the faintest sense of a "click" in my brain that I might be understanding what is actually going on.
+
+The reason I brought this up is because I think part of the click occurred whilst listening to the podcast. One of the last things I desperately struggled with was when I was trying to learn formal logic and argument mapping for a philosophy course a few years ago. I think the reason it was so difficult was that I couldn't relate it back to anything I had learnt previously. I thought about dropping the course for a while. But instead of giving up, I really tried to involve myself in learning the basics repeatedly until I understood it.
+
+Obviously there is a correlation between formal logic and learning to program however a lot of my issues was getting tied up in syntax.
+
+I think this course really changed the way I saw the world. To try to see things from a rational perspective. what is true, what is valid and what is just persuasion. I had actually heard of the book "algorithms to live by" earlier and I think I read the first chapter. I don't think I had the mindset that I do now after taking that philosophy course to see the world as being very irrational, we can learn to navigate it by being rational and logical with our decisions. Changing our perspective from seeing what is directly in front of us to taking a step back and looking at our problems from a higher level. I think trusting in logic, maths and reason is an alleviator for stress.
+
+I'm not sure if this reflection made any sense, but I think it was important to me so oh well hahaha
+
+The pyramid Code
+
+My thinking:
+pyramid - create pascals triangle - if 1 replace with \* else " " (space) - wont work - but looked into some of the logic behind pascals triangle
+
+I think the better code were the ones that used words that "made sense" and were readable - I think the ones that used words like "dots" or "stars" or "spaces" were more successful in terms of readability. The ones that just used letters and numbers were hard to read and visualise what each line of code was doing. The ones with useful names seemed to work better and be more elegant solutions to the problem, even if they function in the same way. There is that quote that "beautiful objects work better" I think there is definetly something to creating beautiful looking code
+
+I'm realising more and more in coding that the quote "there are many ways to skin a cat" continues to ring true.
+
+Notes:
+
+below are some notes that I took this week as I took a few beginner course in python. I feel im lagging in the class so I'm doing my best to catchup by doing some extra work
 
 F-Strings
 print(f"{chosen_number} is too big or too small") # includes chosen number and number can change
@@ -15,6 +38,10 @@ will show you all the functions you can do with that string object
 e.g course.upper would make it upper case
 
 NEED TO REVISE NESTED LOOPS
+
+guard = 0
+while guard < 1000 - this acts as a guard against running forever
+guard += 1 - will keep working in the while loop until it reaches 1000
 
 binary search of sorts:
 FIND THE HIGHEST NUMBER IN THE LIST
