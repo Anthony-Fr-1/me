@@ -1,3 +1,5 @@
+I think im starting to understand "how" to do things and visualise a little bit better what is going on. But I still find myself getting stuck in syntax or just working out how to write out the script that I want to make. Perhaps I need to get better as pseudocode and diagramming
+
 Sketchpad
 
 It's incredible to think about how fundamental this method of creating geometries is as the basis for all of our current CAD software. I've seen a video on sketchpad before but every time I see it being used, I'm still amazed that they were doing this in 1962.
@@ -26,3 +28,61 @@ nobody knew what programming was supposed to be
 In science if you know what you are doing you should not be doing it.
 In engineering if you do not know what you are doing you should not be doing it.
 Of course, you seldom, if ever, see either pure state.
+
+> > > f = open('workfile', 'w')
+
+r = read only
+w = write (old file deleted)
+a = opens the file for appending - data is added to the end
+r+ = opens the file for reading and writing
+
+HOW TO FIND THE LARGEST ITEM IN A LIST
+
+#This is Pseduocode to find the greatest element in the list
+
+You have a List with the following number elements
+
+A = [10 20 30 10]
+
+to find the max value in a list like that, you can use the Max sort method.
+
+To perform this method you need to save 1 variable => the current maximum value.
+
+You can initialize the max as 0
+
+MAX = 0
+
+lets iterate over this list and see what the following code does
+
+for x in A:
+if MAX < x:
+MAX = x
+What happens here. Lets go over the iterations
+
+in iteration one x = A[0] = 10 and MAX = 0
+
+    Is 10 greater than 0? OF COURSE
+
+    Now MAX is 10
+
+in iteration two x = A[1] = 20 and MAX = 10
+
+    Is 20 greater than 10? OF COURSE
+
+    Now MAX is 20
+
+in iteration Three x = A[2] = 30 and MAX = 20
+
+    Is 30 greater than 20? OF COURSE
+
+    Now MAX is 30
+
+in iteration Four x = A[3] = 10 and MAX = 30
+
+    Is 10 greater than 30? NOPE
+
+    MAX REMAINS THE SAME = 30
+
+This method only cares about the max values that it sees, so all VALUES
+less than max are thrown away. Doing this you can extract the max elements
+in a list.

@@ -36,7 +36,13 @@ def get_some_details():
     json_data = open(LOCAL + "/lazyduck.json").read()
 
     data = json.loads(json_data)
-    return {"lastName": None, "password": None, "postcodePlusID": None}
+    last_name = data["results"][0]["name"]["last"]
+    postcode = data["results"][0]["location"]["postcode"]
+    password = data["results"][0]["login"]["password"]
+    id = data["results"][0]["id"]["value"]
+    postcode_id = int(postcode) + int(id)
+    print(last_name, password, postcode_id)
+    return {"lastName": last_name, "password": password, "postcode_id": postcode_id}
 
 
 def wordy_pyramid():
@@ -73,17 +79,37 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &wordlength=
     """
+
+    import requests
+
+    word_list = []
+    for i in range(3, 20, 2):
+        Response = requests.get(
+            "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength="
+            + str(i)
+        )
+        # print(Response.text)
+        word_list.append(Response.text)
+    for i in range(20, 3, -2):
+        Response = requests.get(
+            "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength="
+            + str(i)
+        )
+        # print(Response.text)
+        word_list.append(Response.text)
+    # print(word_list)
+
     pass
 
 
 def pokedex(low=1, high=5):
-    """ Return the name, height and weight of the tallest pokemon in the range low to high.
+    """Return the name, height and weight of the tallest pokemon in the range low to high.
 
     Low and high are the range of pokemon ids to search between.
     Using the Pokemon API: https://pokeapi.co get some JSON using the request library
     (a working example is filled in below).
     Parse the json and extract the values needed.
-    
+
     TIP: reading json can someimes be a bit confusing. Use a tool like
          http://www.jsoneditoronline.org/ to help you see what's going on.
     TIP: these long json accessors base["thing"]["otherThing"] and so on, can
@@ -92,11 +118,44 @@ def pokedex(low=1, high=5):
     """
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
 
-    url = template.format(id=5)
-    r = requests.get(url)
-    if r.status_code is 200:
-        the_json = json.loads(r.text)
-    return {"name": None, "weight": None, "height": None}
+    max_height = 0
+
+    for i in range(1, 5, 1):
+        template = "https://pokeapi.co/api/v2/pokemon/{id}"
+        url = template.format(id=i)
+        r = requests.get(url)
+        if r.status_code == 200:
+            the_json = json.loads(r.text)
+            height = the_json["height"]
+            if max_height < height:
+                max_height = the_json["height"]
+                name = the_json["name"]
+                weight = the_json["weight"]
+    print(f"'name': {name}, 'weight': {weight}, 'height': {max_height}")
+
+    return {"name": name, "weight": weight, "height": max_height}
+
+    # for i in range(1, 5, 1):
+    # Response = requests.get(
+    # "https://pokeapi.co/api/v2/pokemon/" + str(i)
+
+    # req = requests.get("http://pokeapi.co/api/v2/pokemon/1/")
+    # API_CALL = "https://pokeapi.co/api/v2/generation/generation-ii"
+    # requests.get(API_CALL)
+    # RES = requests.get(API_CALL)
+    # RES.json()  # returns a dictionary
+    # DATA = RES.json()
+    # DATA["pokemon_species"]
+
+    # height = ["height"]
+
+    # https://pokeapi.co/api/v2/pokemon/{id or name}/
+
+    # height =
+    # name =
+    # weight =
+    # only between low and high
+    # need the top 5 tallest
 
 
 def diarist():
@@ -113,6 +172,7 @@ def diarist():
          the test will have nothing to look at.
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
+
     pass
 
 
