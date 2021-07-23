@@ -115,18 +115,17 @@ def fizz_buzz() -> List:
          'FizzBuzz', 16, 17, ...]
     """
     fizz_buzz_list = []
-    for i in range(100):
+    # your code here
+    for i in range(1, 101):
         if i % 3 == 0 and i % 5 == 0:
-            return "FizzBuzz"
-            continue
+            fizz_buzz_list.append("FizzBuzz")
         elif i % 3 == 0:
-            return "Fizz"
-            continue
+            fizz_buzz_list.append("Fizz")
         elif i % 5 == 0:
-            return "Buzz"
-            continue
-        fizz_buzz_list.append(i)
-
+            fizz_buzz_list.append("Buzz")
+        else:
+            fizz_buzz_list.append(i)
+    print(fizz_buzz_list)
     return fizz_buzz_list
 
 
