@@ -143,12 +143,13 @@ def set_it_on_fire(input_string="very naughty boy") -> str:
     """
 
     words = input_string.upper()
-    words = map(lambda x:"🔥".join(x), words)
+    words = map(lambda x: "🔥".join(x), words)
     words = "🔥".join(words)
-    words.insert(0,"🔥")
-    words.append("🔥")
-    print(words)
-    return words
+    word_list = list(words)
+    word_list.insert(0, "🔥")
+    word_list.append("🔥")
+    the_answer = "".join(word_list)
+    return the_answer
 
 
 def pet_filter(letter="a") -> List:
@@ -166,7 +167,9 @@ def pet_filter(letter="a") -> List:
     ]
     # fmt: on
     filtered = []
-
+    for pet in pets:
+        if letter in pet:
+            filtered.append(pet)
     return filtered
 
 
