@@ -186,6 +186,14 @@ def best_letter_for_pets() -> str:
     the_alphabet = string.ascii_lowercase
     most_popular_letter = ""
 
+    most_popular_letter = q
+
+    letter = the_json["height"]
+        if most_popular_letter < letter:
+        most_popular_letter = the_json["height"]
+        name = the_json["name"]
+        weight = the_json["weight"]
+
     return most_popular_letter
 
 
@@ -213,10 +221,17 @@ def make_filler_text_dictionary() -> Dict:
     (i.e. 3, 4, 5, 6, 7 and 4 words for each)
     TIP: you'll need the requests library
     """
+    import requests
 
     url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength="
     wd = {}
 
+    word_list = []
+    
+    for i in range(4):
+        for i in range(3, 7, 1):
+            Response = requests.get(url + str(i))
+            print(Response.text)
     return wd
 
 
