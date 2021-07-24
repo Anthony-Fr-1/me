@@ -173,8 +173,26 @@ def diarist():
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
 
-    pass
+    file_path = "set4/Trispokedovetiles(laser).gcode"
+    with open(file_path, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+    # could use a list comprehension
+    # print(f.read())
+    # way 1
+    counter = 0
+    for line in lines:
+        if "M10 P1" in line:
+            counter += 1
+    # way 2
+    # len gives you the length of something
+    # calling len on a string gives you the number of characters in a string
+    # read the file, do something to it and then save it again
 
+    counter = len([x for x in lines if "M10 P1" in x])
+
+    out_file_path = "set4/lasers.pew"
+    with open(out_file_path, "w", encoding="utf-8") as f:
+        f.write(str(counter))
 
 if __name__ == "__main__":
     functions = [
