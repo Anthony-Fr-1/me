@@ -41,7 +41,9 @@ def get_some_details():
     password = data["results"][0]["login"]["password"]
     id = data["results"][0]["id"]["value"]
     postcode_id = int(postcode) + int(id)
+    print(data)
     print(last_name, password, postcode_id)
+
     return {"lastName": last_name, "password": password, "postcode_id": postcode_id}
 
 
@@ -98,8 +100,7 @@ def wordy_pyramid():
         # print(Response.text)
         word_list.append(Response.text)
     # print(word_list)
-
-    pass
+    return word_list
 
 
 def pokedex(low=1, high=5):
@@ -173,26 +174,33 @@ def diarist():
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
 
-    file_path = "set4/Trispokedovetiles(laser).gcode"
-    with open(file_path, "r", encoding="utf-8") as f:
-        lines = f.readlines()
+    with open("set4/Trispokedovetiles(laser).gcode", "r") as g_code:
+        m_code_count = g_code.read().count("M10 P1")
+
+    with open("set4/lasers.pew", "w") as pew:
+        pew.write(str(m_code_count))
+
+    # file_path = "set4/Trispokedovetiles(laser).gcode"
+    # with open(file_path, "r", encoding="utf-8") as f:
+    #     lines = f.readlines()
     # could use a list comprehension
     # print(f.read())
     # way 1
-    counter = 0
-    for line in lines:
-        if "M10 P1" in line:
-            counter += 1
+    # counter = 0
+    # for line in lines:
+    #     if "M10 P1" in line:
+    #         counter += 1
     # way 2
     # len gives you the length of something
     # calling len on a string gives you the number of characters in a string
     # read the file, do something to it and then save it again
 
-    counter = len([x for x in lines if "M10 P1" in x])
+    # counter = len([x for x in lines if "M10 P1" in x])
 
-    out_file_path = "set4/lasers.pew"
-    with open(out_file_path, "w", encoding="utf-8") as f:
-        f.write(str(counter))
+    # out_file_path = "set4/lasers.pew"
+    # with open(out_file_path, "w", encoding="utf-8") as f:
+    #     f.write(str(counter))
+
 
 if __name__ == "__main__":
     functions = [
