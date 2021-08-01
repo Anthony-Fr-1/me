@@ -1,1 +1,5 @@
-TODO: Reflect on what you learned this week and what is still unclear.
+I read 2 really interesting quotes this week about the divide between academic uses for computational design and real-world industry uses. I think I need to look for the ways that I can apply this learning in the real world. I think that's where it has the most functional benefit and potential for change.
+
+    Zboinska (2014) mentions that many architects find the tools proposed by academia to be too abstract and tedious to use. Another reason for the gap between industry and academia is that the majority of the design tools are developed with academic problems in mind, rather than industrial  needs,  resulting  in  tools that  might  show  technical prowess, but lack crucial aspects that hinder their use in an industrial setting.
+
+    "Designers' actions are high-level mechanisms based on heuristics and assumptions learned from professional experience. Significant research has been devoted to understanding these actions as well as finding ways to aid, automate, or augment them with computational support. However, representing and manipulating such tacit knowledge in computational environments remains an open area of research."  - from paper - On the role of computational support for designers in action

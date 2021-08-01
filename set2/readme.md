@@ -31,3 +31,42 @@ all the elements are there in my brain but something is just missing. Someone in
 A friend of mine let me know about a website called w3 which to me feels a bit like blocks, because i can look something up and copy it in. I feel this is the way I learnt grasshopper, just struggling and doing a lot of copying and pasting until i started to think about how to solve problems.
 
 Yes i've had feelings of giving up, its only natural when learning something new. This reminds me of when I learnt formal logic and arguments. I couldnt get my head around modus ponens, tautologies etc. but all of a sudden it just clicked and it felt like i could bring a little more sense to the world. Maybe python will unlock the secrets of the universe? im not sure... answer = 42
+
+Values
+•
+• Integer means a whole counting number
+• Float - floating point decimal - basically just decimal number
+• Boolean or Bool - descirbe binary logical questions - true or false - answer to logical questions - boolean questions control a program
+• String - text - can also be treat numbers as a string, not the number
+Variables
+• Similar to algebra
+•
+• My_variable - is the name
+• = - is the assignment operator - puts the value into the variable
+• Give your variables good names
+○ Programming is written for humans to understand and computers to incidentally understand
+○ Keystrokes are free - the computer doesn’t care how long the title of the variable is - make them descriptive
+Expressions
+• Something you can resolve
+• Follows bodmas - order of precedents matters
+• Can manage this by adding brackets
+Functions
+• Improve the usability of your code
+• Def - is a function definition
+Collections
+• Lists
+• Square brackets []
+• The first thing is 0
+• Homogenous of heterogenous list of strings and numbers
+• Tupel - number of things round brackets () - not functions
+• Dictionaries - key: value pairs
+•
+Flow control
+•
+• Else handles situations where the if is not true
+•
+• Elif - if something is == to something else
+• If something is equal to something else
+Iteration
+• Doing a process over and over again
+• Reading a book is an iteration

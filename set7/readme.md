@@ -1,4 +1,26 @@
+Notes from guest lecture
+
+Gis geospatial data
+Automate the boring stuff - a lot of cleaning and organizing data - can write a script that allows you to download and clean data
+Geopandas
+Replicate - and repetition - more for yourself - an iterative process for useful
+Reproducibility - sharing what you’re doing so that other people can use it
+Lift the curtain on software - allows you to see inside software and what’s behind the GUI - shows what’s happening behind the sees
+Levels up skill set - differentiates you from other people in your industry
+Good for communication datasets and visuallisjgn data - can communicate with software developers
+Moving pandas - visualizes trajectories and moving data - geospatial visualitiom around movement data
+Big data is all around us now - global scale data -we need a way to critically understand it and analyse it - smat]rt furniture
+Accessing data through an api and working with big data sets
+R is very popular in academia
+Design and cartography is another part of the Gis community that makes pretty maps
+
 Solidworks/Python/Grasshopper - Thoughts on integrating computational processes in an industrial design setting
+
+I've been really interested lately in how I can apply all this computational stuff into solidworks. Here are some of the thoughts I've been having lately
+
+I read this interesting article and it explains a process of working with grasshopper and solidworks
+
+https://parametricmonkey.com/2019/07/15/uts-central-a-case-study-in-digital-fabrication/
 
 The problem with Solidworks
 
