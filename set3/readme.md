@@ -1,3 +1,31 @@
+Notes from guest lecture
+
+I really enjoyed this lecture. It really got me thinking about how computers can be used to create designs that are more flexible and fluid and allow us to make changes later down the track. The idea of trust was really interesting. We put so much faith in these decisions and then spend no time reflecting on whether it was correct.
+
+Doubt and trust
+I doubt this is the answer - the hard bit is then trusting yourself to make it better
+The tension of desigining -
+Distributed work. What is collaboration?
+What is geography?
+Asynchronous working
+Security and access
+Competing monoliths and vendor lock-in. Who is really doing the designing?
+Data value
+Fighting against the revit way of making - you need to have your own vision, not the corporate vision that autodesk gives us - similar to solidworks
+Patrick macleamy curve
+Daniel Davis regnier curve
+We are able to make decisions easily in the drafting phase - but you actually want to make changes when you are constructuing - but that’s too late
+How do you make something where you can change your at the expensive part of the process
+
+...changes occur because design is a knowledge generating process. Often it is only through iteration, exploration, and reflection that the problem - much less the design response - becomes known.
+
+You start to understand when you have designed it, but its too late to change it
+You essentially need to deisgn two buildings - one as a full draft and then the second as an improved design once you’ve finnally designed it
+Flexibility could come from code
+Apps update weekly - they are able to change the code as the app is out in theworld
+Set your projexts up well so you can change your mind later on
+Above all else, coding allows you to get into the nitty gritty and the deep down of the tool
+
 ![alt text](https://github.com/Anthony-Fr-1/me/blob/58fd513adb3462e989215d7e91af20b14a70bcbc/Week%203%201161%20Diagram.png)
 
 REFLECTION ON - Tom Griffiths and Brian Christian on “Algorithms to Live By” Rationally Speaking.
