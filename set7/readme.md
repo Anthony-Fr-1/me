@@ -18,8 +18,8 @@ Skeleton modelling/top down modelling process
     - Grasshopper is really great for mocking out dimensions, like a parametric rod and node system. So can we mock things up in grasshopper and then use this as the basis for the arrangement and dimensions of components? Can we use grasshopper to find the optimal layout of components by manipulating the values of a master sketch?
     - A lot of times products work like miniature systems. A system can be described as a flowchart. The product itself is really just a kind of sandwich arrangement of these system parts. If we could imbed some kind of internal logic we could arrange these parts with a computational process.
 
-    ![alt text](https://github.com/Anthony-Fr-1/me/blob/ae2a5ba9ba984ccb363d0f10ed9c6c906191a0e5/Pictures/Skeleton%20Modelling%201.png)
-    ![alt text](https://github.com/Anthony-Fr-1/me/blob/ae2a5ba9ba984ccb363d0f10ed9c6c906191a0e5/Pictures/Skeleton%20Modelling%202.png)
+![alt text](https://github.com/Anthony-Fr-1/me/blob/ae2a5ba9ba984ccb363d0f10ed9c6c906191a0e5/Pictures/Skeleton%20Modelling%201.png)
+![alt text](https://github.com/Anthony-Fr-1/me/blob/ae2a5ba9ba984ccb363d0f10ed9c6c906191a0e5/Pictures/Skeleton%20Modelling%202.png)
 
 Potential Process
 
