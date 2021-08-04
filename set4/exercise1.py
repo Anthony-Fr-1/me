@@ -33,18 +33,36 @@ def get_some_details():
          dictionary, you'll need integer indeces for lists, and named keys for
          dictionaries.
     """
+
     json_data = open(LOCAL + "/lazyduck.json").read()
 
     data = json.loads(json_data)
-    last_name = data["results"][0]["name"]["last"]
-    postcode = data["results"][0]["location"]["postcode"]
-    password = data["results"][0]["login"]["password"]
-    id = data["results"][0]["id"]["value"]
-    postcode_id = int(postcode) + int(id)
-    print(data)
-    print(last_name, password, postcode_id)
 
-    return {"lastName": last_name, "password": password, "postcode_id": postcode_id}
+    lastname = data["results"][0]["name"]["last"]
+    password = data["results"][0]["login"]["password"]
+    postcode = data["results"][0]["location"]["postcode"]
+    ID = data["results"][0]["id"]["value"]
+    postcodePlusID = int(postcode) + int(ID)
+
+    # print(lastname, password, postcodePlusID)
+
+    return {
+        "lastName": lastname,
+        "password": password,
+        "postcodePlusID": postcodePlusID,
+    }
+    # json_data = open(LOCAL + "/lazyduck.json").read()
+
+    # data = json.loads(json_data)
+    # last_name = data["results"][0]["name"]["last"]
+    # postcode = data["results"][0]["location"]["postcode"]
+    # password = data["results"][0]["login"]["password"]
+    # id = data["results"][0]["id"]["value"]
+    # postcode_id = int(postcode) + int(id)
+    # print(data)
+    # print(last_name, password, postcode_id)
+
+    # return {"lastName": last_name, "password": password, "postcode_id": postcode_id}
 
 
 def wordy_pyramid():
@@ -82,25 +100,39 @@ def wordy_pyramid():
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &wordlength=
     """
 
-    import requests
+    list = []
+    for number in range(3, 20, 2):
+        ogprt1 = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength="
+        og = ogprt1 + str(number)
+        oglink = requests.get(og)
+        list.append(oglink.text)
+        # print(oglink.text)
+    for number in range(20, 3, -2):
+        ogprt1 = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength="
+        og = ogprt1 + str(number)
+        oglink = requests.get(og)
+        list.append(oglink.text)
+        # print(oglink.text)
+    return list
+    # import requests
 
-    word_list = []
-    for i in range(3, 20, 2):
-        Response = requests.get(
-            "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength="
-            + str(i)
-        )
-        # print(Response.text)
-        word_list.append(Response.text)
-    for i in range(20, 3, -2):
-        Response = requests.get(
-            "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength="
-            + str(i)
-        )
-        # print(Response.text)
-        word_list.append(Response.text)
-    # print(word_list)
-    return word_list
+    # word_list = []
+    # for i in range(3, 20, 2):
+    #     Response = requests.get(
+    #         "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength="
+    #         + str(i)
+    #     )
+    #     # print(Response.text)
+    #     word_list.append(Response.text)
+    # for i in range(20, 3, -2):
+    #     Response = requests.get(
+    #         "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength="
+    #         + str(i)
+    #     )
+    #     # print(Response.text)
+    #     word_list.append(Response.text)
+    # # print(word_list)
+    # return word_list
 
 
 def pokedex(low=1, high=5):
@@ -117,24 +149,44 @@ def pokedex(low=1, high=5):
          get very long. If you are accessing a thing often, assign it to a
          variable and then future access will be easier.
     """
+
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
 
-    max_height = 0
-
-    for i in range(1, 5, 1):
-        template = "https://pokeapi.co/api/v2/pokemon/{id}"
-        url = template.format(id=i)
+    tallest = 0
+    for id in range(low, high):
+        url = template.format(id=id)
         r = requests.get(url)
-        if r.status_code == 200:
+        if r.status_code is 200:
             the_json = json.loads(r.text)
-            height = the_json["height"]
-            if max_height < height:
-                max_height = the_json["height"]
+            # print(the_json)
+            currentheight = the_json["height"]
+            if tallest < currentheight:
+                tallest = currentheight
                 name = the_json["name"]
                 weight = the_json["weight"]
-    print(f"'name': {name}, 'weight': {weight}, 'height': {max_height}")
+                height = the_json["height"]
+    print(name, weight, height)
 
-    return {"name": name, "weight": weight, "height": max_height}
+    return {"name": name, "weight": weight, "height": height}
+
+    # template = "https://pokeapi.co/api/v2/pokemon/{id}"
+
+    # max_height = 0
+
+    # for i in range(1, 5, 1):
+    #     template = "https://pokeapi.co/api/v2/pokemon/{id}"
+    #     url = template.format(id=i)
+    #     r = requests.get(url)
+    #     if r.status_code == 200:
+    #         the_json = json.loads(r.text)
+    #         height = the_json["height"]
+    #         if max_height < height:
+    #             max_height = the_json["height"]
+    #             name = the_json["name"]
+    #             weight = the_json["weight"]
+    # print(f"'name': {name}, 'weight': {weight}, 'height': {max_height}")
+
+    # return {"name": name, "weight": weight, "height": max_height}
 
     # for i in range(1, 5, 1):
     # Response = requests.get(
@@ -174,11 +226,23 @@ def diarist():
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
 
-    with open("set4/Trispokedovetiles(laser).gcode", "r") as g_code:
-        m_code_count = g_code.read().count("M10 P1")
+    mode = "r"  # from the docs
+    pewbook = open("set4/Trispokedovetiles(laser).gcode", mode)
+    pewbookdata = pewbook.read()
+    counter = pewbookdata.count("M10 P1")
+    pewbook.close()
 
-    with open("set4/lasers.pew", "w") as pew:
-        pew.write(str(m_code_count))
+    mode = "w"
+    lasers = open("set4/lasers.pew", mode)
+    # or ../me/set4/lasers.pew
+    lasers.write(str(counter))
+    lasers.close()
+
+    # with open("set4/Trispokedovetiles(laser).gcode", "r") as g_code:
+    #     m_code_count = g_code.read().count("M10 P1")
+
+    # with open("set4/lasers.pew", "w") as pew:
+    #     pew.write(str(m_code_count))
 
     # file_path = "set4/Trispokedovetiles(laser).gcode"
     # with open(file_path, "r", encoding="utf-8") as f:
